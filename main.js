@@ -41,7 +41,9 @@ const vm = new Vue({
         once:'This will be set only once', // v-once can be set only once
         tasks:[],
         title: 'v-bind:title.sync two way binding for props',
-        show: true
+        show: true,
+        keyword:'',
+        searchResults: []
     },
     methods:{
         addTask: function(){
@@ -59,6 +61,13 @@ const vm = new Vue({
         },
         search: function(){
             
+            this.searchResults = [];
+            _.filter(this.tasks,(item)=>{
+                if(item.startsWith(this.keyword)){
+                    this.searchResults.push(item);
+                }
+            });
+            this.tasks = this.searchResults;
         }
      },
     computed:{
