@@ -48,6 +48,7 @@ const vm = new Vue({
             let self = this;
             self.tasks.push(self.newTask);
             self.newTask = '';
+            self.task = '';
         },
         capitalize : function(t){
             console.log(t);
@@ -55,6 +56,9 @@ const vm = new Vue({
         },
         submit : function(){
             alert('Key pressed');
+        },
+        search: function(){
+            
         }
      },
     computed:{
@@ -66,3 +70,4 @@ const vm = new Vue({
     }
 });
 
+vm.task = 'Enter your task here';
