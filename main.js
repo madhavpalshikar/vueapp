@@ -54,7 +54,8 @@ const vm = new Vue({
         title: 'v-bind:title.sync two way binding for props',
         author: 'Mark',
         category: 'science',
-        show: true
+        keyword:'',
+        searchResults: []
     },
     methods:{
         addTask: function(){
@@ -71,7 +72,14 @@ const vm = new Vue({
             alert('Key pressed');
         },
         search: function(){
-            _.filter
+            
+            this.searchResults = [];
+            _.filter(this.tasks,(item)=>{
+                if(item.startsWith(this.keyword)){
+                    this.searchResults.push(item);
+                }
+            });
+            this.tasks = this.searchResults;
         }
      },
     computed:{
