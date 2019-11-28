@@ -3,6 +3,17 @@ Vue.component('blog-post',{
     props:['postTitle'],
     template:'<h3>{{postTitle}}</h3>'
 });
+
+Vue.component('author',{
+    props:['authorName'],
+    template:'<h3>{{authorName}}</h3>'
+});
+
+Vue.component('category',{
+    props:['catName'],
+    template:'<h3>{{catName}}</h3>'
+});
+
 const vm = new Vue({
     el:'#app',
     beforeCreate : function(){
@@ -41,6 +52,8 @@ const vm = new Vue({
         once:'This will be set only once', // v-once can be set only once
         tasks:[],
         title: 'v-bind:title.sync two way binding for props',
+        author: 'Mark',
+        category: 'science',
         show: true
     },
     methods:{
@@ -58,7 +71,7 @@ const vm = new Vue({
             alert('Key pressed');
         },
         search: function(){
-            
+            _.filter
         }
      },
     computed:{

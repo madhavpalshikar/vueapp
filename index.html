@@ -58,6 +58,8 @@
                 <h1>Vue Component</h1>
                 <input type="text" v-model="title" class="form-control">
                 <blog-post v-bind:post-title.sync="title"></blog-post>
+                <author v-bind:author-name.sync="author"></author>
+                <category v-bind:cat-name.sync="category"></category>
                 Once: <b>{{getOnce}}</b>
                 <div id="demo">
                     <button v-on:click="show = !show">
